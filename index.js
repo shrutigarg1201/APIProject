@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 //mongoose
 const mongoose = require("mongoose");
@@ -14,14 +16,8 @@ booky.use(bodyParser.urlencoded({extended: true}));
 booky.use(bodyParser.json());
 
 //connect mongoose to mongoDB
-mongoose.connect("mongodb+srv://shruti:chinu@mongodb@shapeai.difm6.mongodb.net/Booky?retryWrites=true&w=majority",
-{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true
-}
-).then(() => console.log("Connection Established"));
+mongoose.connect(process.env.MONGO_URL,
+{}).then(() => console.log("Connection Established"));
 
 /**
  * Route            /
