@@ -283,6 +283,32 @@ booky.delete("/book/delete/:isbn",(req,res) => {
     return res.json({books: database.books});
 });
 
+/**
+ * Route            /book/delete
+ * Description      Delete a book
+ * Access           Public
+ * Parameter        isbn
+ * Methods          DELETE
+ */
+booky.delete("/book/author/:isbn/:authorId", (req,res) => {
+    database.books.forEach((book) => {
+        if(book.ISBN === req.params.isbn){
+            const newAuthorList = book.author.filter(
+                (eachAuthor) => eachAuthor !== parseInt(req.params.authorId)
+            );
+            book.author = newAuthorList;
+            return;
+        }
+        return res.json(
+            {
+                book: database.books,
+                message: "successful"
+            }
+        )
+    });
+
+})
+
 //multiple parameters
 /**
  * Route            /book/delete/author
