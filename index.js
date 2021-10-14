@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 
 //Database
-const database = require("./database");
+const database = require("./Database/database");
 
 //Initialise express
 const booky = express();
