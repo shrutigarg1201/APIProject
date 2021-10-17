@@ -46,3 +46,14 @@
 //1. Dlete a book--------------------------------------------DONE
 //2. Delete author from book---------------------------------COMPLETED
 //3. Delete aythor from book and related book from author----DONE
+
+
+//MongoDB does not use scheme but mongoose do use it
+//Schema->  basically a blueprint of how data has to constructed
+//Mongoose helps in validation
+//validation -> checking like correct input is given or not, security, helps in checking relationship with other data
+//model -> document/datbase,  similar to schema;document model of MongoDB
+
+
+//Work flow
+//Schema -> Model -> use them.
